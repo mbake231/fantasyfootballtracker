@@ -1,5 +1,12 @@
-.App {
+#AppContainer {
   text-align: center;
+  
+}
+
+#master-content {
+  padding-left:5%;
+  padding-right:5%;
+
 }
 
 .App-logo {

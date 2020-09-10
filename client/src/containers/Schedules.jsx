@@ -15,12 +15,7 @@ class Schedules extends Component{
 
 render() {
   return (
-    <div className="Home">
-      <div className="lander">
-        <h1>Schedules</h1>
-      </div>
-      <Button className='homeBtn' block bssize="large" onClick={this.handleClick.bind(this)}>Start a Texas Hold'em Table</Button>
-    </div>
+    <div>WIP</div>
   );
 }
 }

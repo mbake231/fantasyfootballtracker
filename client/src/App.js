@@ -84,7 +84,7 @@ render() {
     </Nav>
   </Navbar.Collapse>
 </Navbar>
-
+<div id='master-content'>
 <Switch>
 <Route path="/" exact render={(props) => <Leaderboard standings={this.state.standings}  {...props}  />} />
 <Route path="/results" exact render={(props) => <Results results={this.state.results}  {...props}  />} />
@@ -93,7 +93,7 @@ render() {
             <Route path="/schedules" exact component={Schedules} />
 
         </Switch>
-
+        </div>
     </div>
   );
 }

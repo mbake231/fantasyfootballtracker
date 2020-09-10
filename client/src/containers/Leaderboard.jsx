@@ -5,10 +5,9 @@ import {Button} from 'react-bootstrap';
 
 export default function Leaderboard(props) {
 
-console.log('porps',props);
-
   return (
-    <Table striped bordered hover>
+    <div> <br></br>
+    <Table striped bordered hover size="sm">
   <thead>
     <tr>
       <th>Rank</th>
@@ -32,6 +31,7 @@ console.log('porps',props);
  
   
 </Table> 
+</div>
   );
 
 }
