@@ -72,13 +72,12 @@ render() {
 
     <div id="AppContainer">
       <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#home">League of Hunks</Navbar.Brand>
+  <Navbar.Brand href="/">League of Hunks</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="/">Leaderboard</Nav.Link>
       <Nav.Link href="/results">Weekly Results</Nav.Link>
-      <Nav.Link href="/schedules">Team Schedules</Nav.Link>
 
       
     </Nav>
