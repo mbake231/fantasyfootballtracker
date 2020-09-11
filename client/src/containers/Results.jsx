@@ -22,7 +22,6 @@ handleChange(e) {
 }
 
 pickColor(num) {
-  console.log("color "+num);
   if (num=='2')
       return 'lightGreen';
   else if (num=='1')
@@ -90,6 +89,8 @@ componentDidMount() {
  
   
 </Table> 
+<div style={{backgroundColor:'lightGreen'}}>Highest Weekly Score</div>
+<div style={{backgroundColor:'lightBlue'}}>Top 6 Weekly Score</div>
 </div>
   );
 
