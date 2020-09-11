@@ -29,7 +29,8 @@ handleChange(e) {
     <Form.Control as="select" onChange={this.handleChange.bind(this)}>
       <option value ="1" onChange={e => {this.updateWeek()}}>1</option>
       <option value ="2" onChange={e => {this.updateWeek()}}>2</option>
-     
+      <option value ="3" onChange={e => {this.updateWeek()}}>3</option>
+
     </Form.Control>
   </Form.Group>
     <Table striped bordered hover size="sm" >
