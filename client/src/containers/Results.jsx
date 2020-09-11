@@ -47,20 +47,23 @@ componentDidMount() {
           });
 }
 
+
  
  render(){
 
   return (
-    <div>
-    <Form.Group controlId="exampleForm.ControlSelect1">
-    <Form.Label>Week</Form.Label>
-    <Form.Control as="select" onChange={this.handleChange.bind(this)}>
-      <option value ="1" onChange={e => {this.updateWeek()}}>1</option>
-      <option value ="2" onChange={e => {this.updateWeek()}}>2</option>
-      <option value ="3" onChange={e => {this.updateWeek()}}>3</option>
+    <div><br></br>
+      <div id="dropdown" style={{textAlign:'left'}}>
+        <Form.Group controlId="exampleForm.ControlSelect1">
+        <Form.Label style={{display:'inline'}}>Week    </Form.Label>
+        <Form.Control style={{display:'inline',width:'20%'}} as="select" onChange={this.handleChange.bind(this)}>
+          <option value ="1" onChange={e => {this.updateWeek()}}>1</option>
+          <option value ="2" onChange={e => {this.updateWeek()}}>2</option>
+          <option value ="3" onChange={e => {this.updateWeek()}}>3</option>
 
-    </Form.Control>
-  </Form.Group>
+        </Form.Control>
+      </Form.Group>
+      </div>
     <Table striped bordered hover size="sm" >
   <thead>
     <tr>
