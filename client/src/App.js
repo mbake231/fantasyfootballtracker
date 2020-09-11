@@ -31,10 +31,10 @@ class App extends Component {
           .then(lb => {
             this.setState({standings:lb},
                () => {
-                console.log(this.state.standings);
+                //console.log(this.state.standings);
           })
         });
-
+{/*
          //ff_schedule
          Tabletop.init({
           key: '1aiT12bXHxdgntv1W5yQCubSt8J31fT1HWY_eLdnsql4',
@@ -46,7 +46,7 @@ class App extends Component {
                 console.log(this.state.schedule);
           })
         });
-        
+    */}   
         //ff_results
         Tabletop.init({
           key: '1943oBmmjDj6krlZx2Ff7MxgxG-oHoVEqY4VRqFkRaBQ',
@@ -55,7 +55,7 @@ class App extends Component {
           .then(res => {
             this.setState({results:res},
                () => {
-                console.log(this.state.results);
+                //console.log(this.state.results);
           })
         });
 

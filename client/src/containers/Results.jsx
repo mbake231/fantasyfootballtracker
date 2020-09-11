@@ -54,8 +54,7 @@ handleChange(e) {
         <td>{this.props.results[i].team2_name}<br/>{this.props.results[i].team2_fantasy_points}</td>
       </tr>
     </tbody>)
-    else
-      console.log('hi'+this.props.results[i].week+"   "+this.state.week)
+    
   }
   
   )}
