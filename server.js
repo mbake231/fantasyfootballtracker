@@ -1,12 +1,9 @@
+const express = require('express')
+const path = require('path');
 
-var mongo = require('mongodb');
-
-var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 3000;
-
-app.listen(port);
-
-console.log('todo list RESTful API server started on: ' + port);
+const app = express()
+const port = process.env.PORT || 3000 // Heroku will need the PORT environment variable
 
 app.use(express.static(path.join(__dirname, 'build')));
+
+app.listen(port, () => console.log(`App is live on port ${port}!`))
