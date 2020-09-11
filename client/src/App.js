@@ -66,8 +66,9 @@ render() {
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="/">Leaderboard</Nav.Link>
-      <Nav.Link href="/results">Weekly Results</Nav.Link>
+      <Nav.Link href="/">The Table</Nav.Link>
+      <Nav.Link href="/results">Weekly Matchups</Nav.Link>
+      <Nav.Link href="/results">Weekly Leaderboard</Nav.Link>
 
       
     </Nav>
