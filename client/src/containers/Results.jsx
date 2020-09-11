@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import Table from 'react-bootstrap/Table';
 import {Form} from 'react-bootstrap';
-
+import Tabletop from 'tabletop';
 
 class Results extends Component{
   constructor() {
   super();
   this.state = {
-      week:"1"
+      week:"1",
+      results: [0,1],
+      topsix: []
   }
 };
 
@@ -17,6 +19,31 @@ handleChange(e) {
      this.setState({week:e.target.value});
  
 
+}
+
+pickColor(num) {
+  if (num=='2')
+      return 'lightGreen';
+  else if (num=='1')
+      return 'lightBlue';
+  else
+      return '';
+}
+
+componentDidMount() {
+          //ff_results
+          Tabletop.init({
+            key: '1943oBmmjDj6krlZx2Ff7MxgxG-oHoVEqY4VRqFkRaBQ',
+            simpleSheet: true})
+            .then((data,tabletop) => data)
+            .then(res => {
+              this.setState({results:res},
+                 () => {
+                  
+            
+                         
+            })
+          });
 }
 
  
@@ -43,15 +70,15 @@ handleChange(e) {
     </tr>
   </thead>
   
-  {this.props.results.map((standings,i) => {
-    if(this.props.results[i].week==this.state.week)
+  {this.state.results.map((standings,i) => {
+    if(this.state.results[i].week==this.state.week)
     return (
       <tbody>
       <tr>
-        <td>{this.props.results[i].team1_name} <br/> {this.props.results[i].team1_fantasy_points}</td>
-        <td>{this.props.results[i].team1_total_Lpts}</td>
-        <td>{this.props.results[i].team2_total_Lpts}</td>
-        <td>{this.props.results[i].team2_name}<br/>{this.props.results[i].team2_fantasy_points}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_topscore_bonus)}} >     {this.state.results[i].team1_name} <br/> {this.state.results[i].team1_fantasy_points}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_topscore_bonus)}}>{this.state.results[i].team1_total_Lpts}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_topscore_bonus)}} >{this.state.results[i].team2_total_Lpts}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_topscore_bonus)}}>{this.state.results[i].team2_name}<br/>{this.state.results[i].team2_fantasy_points}</td>
       </tr>
     </tbody>)
     

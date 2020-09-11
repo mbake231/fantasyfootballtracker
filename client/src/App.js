@@ -47,17 +47,7 @@ class App extends Component {
           })
         });
     */}   
-        //ff_results
-        Tabletop.init({
-          key: '1943oBmmjDj6krlZx2Ff7MxgxG-oHoVEqY4VRqFkRaBQ',
-          simpleSheet: true})
-          .then((data,tabletop) => data)
-          .then(res => {
-            this.setState({results:res},
-               () => {
-                //console.log(this.state.results);
-          })
-        });
+
 
         
  
