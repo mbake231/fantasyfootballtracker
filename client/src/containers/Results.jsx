@@ -22,12 +22,14 @@ handleChange(e) {
 }
 
 pickColor(num) {
+  console.log("color "+num);
   if (num=='2')
       return 'lightGreen';
   else if (num=='1')
       return 'lightBlue';
   else
       return '';
+  
 }
 
 componentDidMount() {
