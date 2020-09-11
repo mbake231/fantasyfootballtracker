@@ -1,6 +1,7 @@
 {
   "short_name": "League of Hunks",
-  "name": "Track your favorite hunk all season long.",
+  "name": "League of Hunks",
+  "description": "Track your favorite hunk all season long.",
   "icons": [
     {
       "src": "favicon.ico",
