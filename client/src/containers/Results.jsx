@@ -32,14 +32,12 @@ handleChange(e) {
      
     </Form.Control>
   </Form.Group>
-    <Table striped bordered hover>
+    <Table striped bordered hover size="sm" >
   <thead>
     <tr>
       <th>Team 1</th>
-      <th>Team 1 League Pts</th>
-      <th>Team 1 Fantasy Pts</th>
-      <th>Team 2 Fantasy Pts</th>
-      <th>Team 2 League Pts</th>
+      <th>Pts Won</th>
+      <th>Pts Won</th>
       <th>Team 2</th>
     </tr>
   </thead>
@@ -49,12 +47,10 @@ handleChange(e) {
     return (
       <tbody>
       <tr>
-        <td>{this.props.results[i].team1_name}</td>
+        <td>{this.props.results[i].team1_name} <br/> {this.props.results[i].team1_fantasy_points}</td>
         <td>{this.props.results[i].team1_total_Lpts}</td>
-        <td>{this.props.results[i].team1_fantasy_points}</td>
-        <td>{this.props.results[i].team2_fantasy_points}</td>
         <td>{this.props.results[i].team2_total_Lpts}</td>
-        <td>{this.props.results[i].team2_name}</td>
+        <td>{this.props.results[i].team2_name}<br/>{this.props.results[i].team2_fantasy_points}</td>
       </tr>
     </tbody>)
     else
