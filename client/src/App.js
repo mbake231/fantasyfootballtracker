@@ -5,6 +5,7 @@ import {Navbar, Nav, NavDropdown}  from 'react-bootstrap';
 import Leaderboard from './containers/Leaderboard';
 import Results from './containers/Results';
 import Schedules from './containers/Schedules';
+import WeeklyLeaderboard from './containers/WeeklyLeaderboard';
 import Tabletop from 'tabletop';
 
 import { Route,Switch,Link } from "react-router-dom";
@@ -67,8 +68,8 @@ render() {
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="/">The Table</Nav.Link>
+      <Nav.Link href="/weeklytable">Weekly Leaderboard</Nav.Link>
       <Nav.Link href="/results">Weekly Matchups</Nav.Link>
-      <Nav.Link href="/results">Weekly Leaderboard</Nav.Link>
 
       
     </Nav>
@@ -81,6 +82,7 @@ render() {
 
             <Route path="/results" exact component={Results} />
             <Route path="/schedules" exact component={Schedules} />
+            <Route path="/weeklytable" exact component={WeeklyLeaderboard} />
 
         </Switch>
         </div>
