@@ -39,10 +39,7 @@ componentDidMount() {
             .then((data,tabletop) => data)
             .then(res => {
               this.setState({results:res},
-                 () => {
-                  
-            
-                         
+                 () => {           
             })
           });
 }
@@ -64,12 +61,12 @@ componentDidMount() {
         </Form.Control>
       </Form.Group>
       </div>
-    <Table striped bordered hover size="sm" >
+    <Table striped bordered hover size="lg" >
   <thead>
     <tr>
       <th>Team 1</th>
-      <th>Pts Won</th>
-      <th>Pts Won</th>
+      <th>Points</th>
+      <th>Points</th>
       <th>Team 2</th>
     </tr>
   </thead>
@@ -79,10 +76,10 @@ componentDidMount() {
     return (
       <tbody>
       <tr>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_topscore_bonus)}} >     {this.state.results[i].team1_name} <br/> {this.state.results[i].team1_fantasy_points}</td>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_topscore_bonus)}}>{this.state.results[i].team1_total_Lpts}</td>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_topscore_bonus)}} >{this.state.results[i].team2_total_Lpts}</td>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_topscore_bonus)}}>{this.state.results[i].team2_name}<br/>{this.state.results[i].team2_fantasy_points}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_topscore_bonus)}} >     {this.state.results[i].team1_name} </td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_topscore_bonus)}}>{this.state.results[i].team1_fantasy_points} &#40;+{this.state.results[i].team1_total_Lpts}&#41;</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_topscore_bonus)}} >{this.state.results[i].team2_fantasy_points}  &#40;+{this.state.results[i].team2_total_Lpts}&#41;</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_topscore_bonus)}}>{this.state.results[i].team2_name}</td>
       </tr>
     </tbody>)
     
