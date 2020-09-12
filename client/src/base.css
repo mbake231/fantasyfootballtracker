@@ -5,7 +5,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	color: #000;
+	color: #C8102E;
 	z-index: 10;
 	text-align: center;
     height: 50px;
@@ -34,7 +34,7 @@
 .loading {
 	display: inline-block;
 	text-align: center;
-	opacity: .4;
+	opacity: .9;
 	margin: 12px 0 0 5px;
 	display: none;
 }
@@ -80,7 +80,7 @@
 	100% {
 		-webkit-transform: scale(1);
 		transform: scale(1);
-		background-color: #000000;
+		background-color: #C8102E;
 		opacity: 1;
 	}
 }
@@ -95,7 +95,7 @@
 	100% {
 		-webkit-transform: scale(1);
 		transform: scale(1);
-		background-color: #000;
+		background-color: #C8102E;
 		opacity: 1;
 	}
 }
