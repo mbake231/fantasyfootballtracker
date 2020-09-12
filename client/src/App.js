@@ -34,7 +34,7 @@ render() {
   return (
     <ReactPullToRefresh
   onRefresh={this.handleRefresh}
-  className="your-own-class-if-you-want"
+  className="pullClass"
   style={{
     textAlign: 'center'
   }}>

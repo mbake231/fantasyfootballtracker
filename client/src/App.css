@@ -1,9 +1,10 @@
 #AppContainer {
   text-align: center;
   background-color:#F8F8F8;
+  height:100%;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
   
     #master-content {
       padding-left:5%;
@@ -13,7 +14,7 @@
   
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   
 
 
@@ -45,6 +46,14 @@
 .App-link {
   color: #61dafb;
 }
+.pullClass {
+  height:100%;
+}
+
+#master-content {
+  height:100%;
+}
+
 
 @keyframes App-logo-spin {
   from {
