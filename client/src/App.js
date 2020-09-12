@@ -40,7 +40,7 @@ render() {
   }}>
     <div id="AppContainer">
 
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg">
   <Navbar.Brand href="/">League of Hunks</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
