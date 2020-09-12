@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import './base.css';
+
 import {Navbar, Nav, NavDropdown}  from 'react-bootstrap';
 import Leaderboard from './containers/Leaderboard';
 import Results from './containers/Results';
 import Schedules from './containers/Schedules';
 import WeeklyLeaderboard from './containers/WeeklyLeaderboard';
 import { Route,Switch,Link } from "react-router-dom";
+import ReactPullToRefresh from 'react-pull-to-refresh';
 
 class App extends Component {
   constructor() {
@@ -17,10 +20,26 @@ class App extends Component {
     }
     };
 
+      
+handleRefresh(resolve, reject) {
+  let self = this;
+  setTimeout(function () {
+    window.location.reload(false);
+
+  }, 1000);
+}      
+ 
+
 render() {
   return (
-
+    <ReactPullToRefresh
+  onRefresh={this.handleRefresh}
+  className="your-own-class-if-you-want"
+  style={{
+    textAlign: 'center'
+  }}>
     <div id="AppContainer">
+
       <Navbar bg="light" expand="lg">
   <Navbar.Brand href="/">League of Hunks</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -46,6 +65,7 @@ render() {
         </Switch>
         </div>
     </div>
+    </ReactPullToRefresh>
   );
 }
 
