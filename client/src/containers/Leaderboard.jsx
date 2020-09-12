@@ -1,38 +1,62 @@
 import React, { Component } from "react";
 import Table from 'react-bootstrap/Table';
-import {Button} from 'react-bootstrap';
+import Tabletop from 'tabletop';
 
 
-export default function Leaderboard(props) {
-
-  return (
-    <div> <br></br>
-    <Table striped bordered hover size="sm">
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Team</th>
-      <th>Name</th>
-      <th>Total Points</th>
-    </tr>
-  </thead>
-  
-  {props.standings.map((standings,i) =>
-      <tbody>
-      <tr>
-        <td>{i+1}</td>
-        <td>{props.standings[i].team_name}</td>
-        <td>{props.standings[i].name}</td>
-        <td>{props.standings[i].total_pts}</td>
-      </tr>
-    </tbody>
-  
-  )}
- 
-  
-</Table> 
-</div>
-  );
-
+//export default function Leaderboard(props) {
+  class Leaderboard extends Component{
+    constructor() {
+      super();
+      this.state = {
+          week:"1",
+          results: [0,1],
+          topsix: []
+      }
+    };
+    
+    componentDidMount() {
+      //ff_results
+      Tabletop.init({
+        key: '1yaNjqP8l-aJeJ6H8HuN3iIxyfbrLO2XdKRjBEG0Rp5k',
+        simpleSheet: true})
+        .then((data,tabletop) => data)
+        .then(res => {
+          this.setState({results:res},
+             () => {           
+        })
+      });
 }
 
+  render(){
+    return (
+      <div> <br></br>
+      <Table striped bordered hover size="sm">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Team</th>
+        <th>Name</th>
+        <th>Total Points</th>
+      </tr>
+    </thead>
+    
+    {this.state.results.map((standings,i) =>
+        <tbody>
+        <tr>
+          <td>{i+1}</td>
+          <td>{this.state.results[i].team_name}</td>
+          <td>{this.state.results[i].name}</td>
+          <td>{this.state.results[i].total_pts}</td>
+        </tr>
+      </tbody>
+    
+        )}
+    
+      
+    </Table> 
+    </div>
+      );
+
+    }
+  }
+export default Leaderboard
