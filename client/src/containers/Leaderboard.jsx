@@ -37,6 +37,7 @@ import Tabletop from 'tabletop';
         <th>Team</th>
         <th>Name</th>
         <th>Total Points</th>
+        <th>Prize</th>
       </tr>
     </thead>
     
@@ -47,6 +48,7 @@ import Tabletop from 'tabletop';
           <td>{this.state.results[i].team_name}</td>
           <td>{this.state.results[i].name}</td>
           <td>{this.state.results[i].total_pts}</td>
+          <td>{this.state.results[i].prize}</td>
         </tr>
       </tbody>
     
