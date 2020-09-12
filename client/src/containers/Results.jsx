@@ -22,9 +22,11 @@ handleChange(e) {
 }
 
 pickColor(num) {
-  if (num=='2')
+  var numInt = parseInt(num);
+  console.log(numInt);
+  if (numInt==1)
       return 'lightGreen';
-  else if (num=='1')
+  else if (numInt<7)
       return 'lightBlue';
   else
       return '';
@@ -76,10 +78,10 @@ componentDidMount() {
     return (
       <tbody>
       <tr>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_topscore_bonus)}} >     {this.state.results[i].team1_name} </td>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_topscore_bonus)}}>{this.state.results[i].team1_fantasy_points} &#40;+{this.state.results[i].team1_total_Lpts}&#41;</td>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_topscore_bonus)}} >{this.state.results[i].team2_fantasy_points}  &#40;+{this.state.results[i].team2_total_Lpts}&#41;</td>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_topscore_bonus)}}>{this.state.results[i].team2_name}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_rank)}} >     {this.state.results[i].team1_name} </td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team1_rank)}}>{this.state.results[i].team1_fantasy_points} &#40;+{this.state.results[i].team1_total_Lpts}&#41;</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_rank)}} >{this.state.results[i].team2_fantasy_points}  &#40;+{this.state.results[i].team2_total_Lpts}&#41;</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].team2_rank)}}>{this.state.results[i].team2_name}</td>
       </tr>
     </tbody>)
     

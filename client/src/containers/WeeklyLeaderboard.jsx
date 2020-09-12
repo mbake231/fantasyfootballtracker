@@ -23,7 +23,7 @@ handleChange(e) {
 
 pickColor(num) {
 
-  var numInt = parseInt(num)+1;
+  var numInt = parseInt(num);
   if (numInt=='1')
       return 'lightGreen';
   else if (numInt<7)
@@ -36,7 +36,7 @@ pickColor(num) {
 componentDidMount() {
           //ff_results
           Tabletop.init({
-            key: '1R66D5cZY0SuCTLmZwvSOiQ4RHNCgvLqmLCR7VZmVlwI',
+            key: '1t5dO1dNVFE5WcPxBOyFRmvbU31aRyr0QOACgGtUgDpk',
             simpleSheet: true})
             .then((data,tabletop) => data)
             .then(res => {
@@ -72,10 +72,10 @@ componentDidMount() {
     return (
       <tbody>
       <tr>
-        <td style={{backgroundColor: this.pickColor(i)}} >     {i+1} </td>
-        <td style={{backgroundColor: this.pickColor(i)}}>{this.state.results[i].team_name}</td>
-        <td style={{backgroundColor: this.pickColor(i)}} >{this.state.results[i].fantasy_pts}</td>
-        <td style={{backgroundColor: this.pickColor(i)}}>{this.state.results[i].total_pts}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}} >     {i+1} </td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}}>{this.state.results[i].team_name}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}} >{this.state.results[i].fantasy_pts}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}}>{this.state.results[i].total_pts}</td>
       </tr>
     </tbody>)
     
