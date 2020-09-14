@@ -4,9 +4,9 @@ const app = express(); // create express app
 var cors = require("cors");
 const Tabletop = require('tabletop');
 
-var leaderboard = ['Loading...'];
-var weeklyLeaderboard = ['Loading...'];
-var results = ['Loading...'];
+var leaderboard = null;
+var weeklyLeaderboard = null;
+var results = null;
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 const port = process.env.PORT || 3000 // Heroku will need the PORT environment variable

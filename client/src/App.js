@@ -7,7 +7,7 @@ import Leaderboard from './containers/Leaderboard';
 import Results from './containers/Results';
 import WeeklyLeaderboard from './containers/WeeklyLeaderboard';
 import { Route,Switch,Link } from "react-router-dom";
-import ReactPullToRefresh from 'react-pull2refresh';
+import PullToRefresh from "pull-to-refresh-react";
 
 class App extends Component {
   constructor() {
@@ -20,7 +20,7 @@ class App extends Component {
     };
 
       
-handleRefresh(resolve, reject) {
+    onRefresh(resolve, reject) {
   let self = this;
   setTimeout(function () {
     window.location.reload(false);
@@ -32,12 +32,15 @@ handleRefresh(resolve, reject) {
 render() {
   return (
     
-<ReactPullToRefresh
-  onRefresh={this.handleRefresh}
-  className="pullClass"
-  style={{
-    textAlign: 'center'
-  }}>
+<PullToRefresh
+        options={{ pullDownHeight: 100 }}
+        onRefresh={this.onRefresh}
+        textRefresh="Getting latest hunks"
+        textStart='Pull to get latest on hunks'
+        textReady='Let go to get latest on hunks'
+
+
+      >
     <div id="AppContainer">
     
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -65,7 +68,7 @@ render() {
         </div>
     </div>
 
-  </ReactPullToRefresh>
+  </PullToRefresh>
   );
 }
 
