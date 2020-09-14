@@ -27,8 +27,13 @@ import axios from 'axios';
         })
       });
       */
+     var url;
+     if(process.env.NODE_ENV === 'production')
+       url='https://www.leagueofhunks.com/lb';
+     else
+       url='http://localhost:3000/lb';
 
-      axios.get(`http://localhost:3000/lb`)
+      axios.get(url)
       .then(res => {
         this.setState({results:res.data})
       });
