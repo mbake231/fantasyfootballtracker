@@ -7,7 +7,7 @@ import Leaderboard from './containers/Leaderboard';
 import Results from './containers/Results';
 import WeeklyLeaderboard from './containers/WeeklyLeaderboard';
 import { Route,Switch,Link } from "react-router-dom";
-import ReactPullToRefresh from 'react-pull-to-refresh';
+import ReactPullToRefresh from 'react-pull2refresh';
 
 class App extends Component {
   constructor() {
@@ -31,14 +31,15 @@ handleRefresh(resolve, reject) {
 
 render() {
   return (
-    <ReactPullToRefresh
+    
+<ReactPullToRefresh
   onRefresh={this.handleRefresh}
   className="pullClass"
   style={{
     textAlign: 'center'
   }}>
     <div id="AppContainer">
-
+    
       <Navbar bg="dark" variant="dark" expand="lg">
   <Navbar.Brand href="/">League of Hunks</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -63,7 +64,8 @@ render() {
         </Switch>
         </div>
     </div>
-    </ReactPullToRefresh>
+
+  </ReactPullToRefresh>
   );
 }
 
