@@ -36,7 +36,6 @@ import Badge from 'react-bootstrap/Badge'
         var adjResults = this.state.results;
         adjResults[0].rank = 1;
         for (var i=1;i<12;i++) {
-          console.log(adjResults);
           if(adjResults[i].total_pts == adjResults[i-1].total_pts) {
             
             adjResults[i].rank = adjResults[i-1].rank;
@@ -44,13 +43,33 @@ import Badge from 'react-bootstrap/Badge'
           else
             adjResults[i].rank = i+1;
         }
-        this.setState({results:adjResults});
+        this.setState({results:adjResults},
+          () => {    
+                  
+          });
       }
     }
 
+    howManyWithRank(rank) {
+
+      var ctr=0;
+      for (var i=0; i<12;i++)
+        if(this.state.results[i].rank==rank)
+            ctr++;
+      
+      return ctr;
+
+  }
+
     calculatePrizes () {
 
+      
+        
+      
+
     }
+
+
 
   render(){
     return (
