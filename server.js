@@ -53,7 +53,7 @@ function refreshLeagueData () {
     });
 
     Tabletop.init({
-      key: '1pwA-gS0FNiB4acXmOknDZvvC-dcflUVLzi31Wu1MSbA',
+      key: '1t5dO1dNVFE5WcPxBOyFRmvbU31aRyr0QOACgGtUgDpk',
       simpleSheet: true})
       .then((data,tabletop) => data)
       .then(res => {
@@ -63,7 +63,7 @@ function refreshLeagueData () {
 
 
       Tabletop.init({
-        key: '1pwA-gS0FNiB4acXmOknDZvvC-dcflUVLzi31Wu1MSbA',
+        key: '1943oBmmjDj6krlZx2Ff7MxgxG-oHoVEqY4VRqFkRaBQ',
         simpleSheet: true})
         .then((data,tabletop) => data)
         .then(res => {
