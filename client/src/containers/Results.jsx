@@ -44,7 +44,13 @@ componentDidMount() {
             })
           });
           */
-          axios.get(`http://localhost:3000/res`)
+         var url;
+     if(process.env.NODE_ENV === 'production')
+       url='https://www.leagueofhunks.com/lb';
+     else
+       url='http://localhost:3000/res';
+
+          axios.get(url)
           .then(res => {
             this.setState({results:res.data})
           });
