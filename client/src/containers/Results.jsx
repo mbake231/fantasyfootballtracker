@@ -46,7 +46,7 @@ componentDidMount() {
           */
          var url;
      if(process.env.NODE_ENV === 'production')
-       url='https://www.leagueofhunks.com/lb';
+       url='https://www.leagueofhunks.com/res';
      else
        url='http://localhost:3000/res';
 
