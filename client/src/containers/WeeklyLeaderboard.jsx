@@ -56,8 +56,23 @@ componentDidMount() {
           axios.get(url)
           .then(res => {
             this.setState({results:res.data})
+            console.log(res.data)
           });
 }
+
+
+getRankEnding (rank) {
+  var rankNum = parseInt(rank);
+  if(rankNum == 1)
+    return 'st';
+  else if (rankNum ==2)
+    return 'nd';
+  else if (rankNum ==3)
+    return 'rd';
+  return 'th';
+
+}
+
 
 
  
@@ -74,10 +89,11 @@ componentDidMount() {
     <Table striped bordered hover size="sm" >
   <thead>
     <tr>
-      <th>Current Rank</th>
+      <th>Rank</th>
       <th>Team</th>
-      <th>Fantasy Pts</th>
-      <th>League Pts</th>
+      <th>Current</th>
+      <th>Projected</th>
+      
     </tr>
   </thead>
   
@@ -85,10 +101,10 @@ componentDidMount() {
     return (
       <tbody>
       <tr>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}} >     {i+1} </td>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}}>{this.state.results[i].team_name}</td>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}} >{this.state.results[i].fantasy_pts}</td>
-        <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}}>{this.state.results[i].total_pts}</td>
+        <td>     {i+1}</td>
+        <td>{this.state.results[i].team_name}</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}} >{this.state.results[i].fantasy_pts} &#40;+{this.state.results[i].total_pts}&#41;</td>
+        <td style={{backgroundColor: this.pickColor(this.state.results[i].proj_rank)}} ><i>{this.state.results[i].proj_fantasy_pts} &#40;{this.state.results[i].proj_rank}{this.getRankEnding(this.state.results[i].proj_rank)}&#41;</i></td>
       </tr>
     </tbody>)
     
