@@ -7,6 +7,7 @@ const Tabletop = require('tabletop');
 var leaderboard = ['Loading...'];
 var weeklyLeaderboard = ['Loading...'];
 var results = ['Loading...'];
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 const port = process.env.PORT || 3000 // Heroku will need the PORT environment variable
 
@@ -37,7 +38,18 @@ app.get('*', (req, res) => {
 
 
 
-setInterval(function(){ refreshLeagueData()},10000)
+setInterval(function(){ 
+
+var now =  new Date();
+
+if (now.getDay()==0 || now.getDay()==1 || now.getDay()==4) {
+    console.log('Day check: '+days[now.getDay()] + " is an NFL gameday!");
+  refreshLeagueData();
+}
+else 
+  console.log(days[now.getDay()] + " is not a game day!");
+
+},10000)
 
 
 function refreshLeagueData () {

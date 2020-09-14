@@ -24,7 +24,7 @@ handleChange(e) {
 pickColor(num) {
 
   var numInt = parseInt(num);
-  if (numInt=='1')
+  if (numInt==1)
       return 'lightGreen';
   else if (numInt<7)
       return 'lightBlue';

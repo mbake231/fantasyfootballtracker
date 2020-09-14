@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Table from 'react-bootstrap/Table';
 import Tabletop from 'tabletop';
 import axios from 'axios';
+import Badge from 'react-bootstrap/Badge'
 
 //export default function Leaderboard(props) {
   class Leaderboard extends Component{
@@ -9,24 +10,12 @@ import axios from 'axios';
       super();
       this.state = {
           week:"1",
-          results: [0,1],
+          results: null,
           topsix: []
       }
     };
     
     componentDidMount() {
-      /*
-      //ff_results
-      Tabletop.init({
-        key: '1pwA-gS0FNiB4acXmOknDZvvC-dcflUVLzi31Wu1MSbA',
-        simpleSheet: true})
-        .then((data,tabletop) => data)
-        .then(res => {
-          this.setState({results:res},
-             () => {           
-        })
-      });
-      */
      var url;
      if(process.env.NODE_ENV === 'production')
        url='https://www.leagueofhunks.com/lb';
@@ -35,15 +24,40 @@ import axios from 'axios';
 
       axios.get(url)
       .then(res => {
-        this.setState({results:res.data})
+        this.setState({results:res.data},
+          () => {    
+              this.adjustRankForTies();       
+          })
       });
-
-
 }
+
+    adjustRankForTies() {
+      if(this.state.results != null) {
+        var adjResults = this.state.results;
+        adjResults[0].rank = 1;
+        for (var i=1;i<12;i++) {
+          console.log(adjResults);
+          if(adjResults[i].total_pts == adjResults[i-1].total_pts) {
+            
+            adjResults[i].rank = adjResults[i-1].rank;
+          }
+          else
+            adjResults[i].rank = i+1;
+        }
+        this.setState({results:adjResults});
+      }
+    }
+
+    calculatePrizes () {
+
+    }
 
   render(){
     return (
-      <div> <br></br>
+      <div> <br/>
+      <h3 style={{textAlign:'left'}}>
+      The Table
+      </h3>
       <Table striped bordered hover size="sm">
     <thead>
       <tr>
@@ -55,21 +69,35 @@ import axios from 'axios';
       </tr>
     </thead>
     
-    {this.state.results.map((standings,i) =>
+    {this.state.results!=null ? (
+    this.state.results.map((standings,i) =>
         <tbody>
         <tr>
-          <td>{i+1}</td>
+          <td>{this.state.results[i].rank}</td>
           <td>{this.state.results[i].team_name}</td>
           <td>{this.state.results[i].name}</td>
           <td>{this.state.results[i].total_pts}</td>
           <td>{this.state.results[i].prize}</td>
         </tr>
       </tbody>
-    
-        )}
-    
-      
+        )) : <div></div>}
+
+
     </Table> 
+    
+
+
+    <div style={{textAlign:'left'}}>
+      <h3>
+      Scoring Rules for Drew
+      </h3>
+      <h5>
+        <ul>Win Weekly Matchup: <Badge variant="warning">+2 Points</Badge></ul>
+        <ul>Highest Weekly Score: <Badge variant="success">+1 Point</Badge></ul>
+        <ul>Place 2nd - 6th in a Week: <Badge variant="primary">+1 Point</Badge></ul>
+      </h5>
+      <br></br>
+    </div>
     </div>
       );
 
