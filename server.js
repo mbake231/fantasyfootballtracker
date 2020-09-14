@@ -41,7 +41,7 @@ setInterval(function(){ refreshLeagueData()},10000)
 
 
 function refreshLeagueData () {
-
+  console.log('==NEW UPDATE==');
   //leaderboard
   Tabletop.init({
     key: '1pwA-gS0FNiB4acXmOknDZvvC-dcflUVLzi31Wu1MSbA',
@@ -49,6 +49,8 @@ function refreshLeagueData () {
     .then((data,tabletop) => data)
     .then(res => {
       leaderboard=res;
+      console.log("Leaderboard updated");
+      
       //console.log(leaderboard);
     });
 
@@ -59,6 +61,7 @@ function refreshLeagueData () {
       .then(res => {
         weeklyLeaderboard=res;
        // console.log(weeklyLeaderboard);
+       console.log("Weekly Leaderboard updated");
       });
 
 
@@ -69,6 +72,7 @@ function refreshLeagueData () {
         .then(res => {
           results=res;
         //  console.log (results);
+        console.log("Matchup results updated");
         });
 
 
