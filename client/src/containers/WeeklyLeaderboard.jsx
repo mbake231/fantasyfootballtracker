@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Table from 'react-bootstrap/Table';
 import {Form} from 'react-bootstrap';
 import Tabletop from 'tabletop';
+import axios from 'axios';
 
 class WeeklyLeaderboard extends Component{
   constructor() {
@@ -15,7 +16,6 @@ class WeeklyLeaderboard extends Component{
 
 handleChange(e) {
  
-   console.log(e.target.value);
      this.setState({week:e.target.value});
  
 
@@ -34,6 +34,7 @@ pickColor(num) {
 }
 
 componentDidMount() {
+          /*
           //ff_results
           Tabletop.init({
             key: '1t5dO1dNVFE5WcPxBOyFRmvbU31aRyr0QOACgGtUgDpk',
@@ -43,6 +44,12 @@ componentDidMount() {
               this.setState({results:res},
                  () => {      
             })
+          });
+          */
+
+          axios.get(`http://localhost:3000/wlb`)
+          .then(res => {
+            this.setState({results:res.data})
           });
 }
 

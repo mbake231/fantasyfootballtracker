@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Table from 'react-bootstrap/Table';
 import Tabletop from 'tabletop';
-
+import axios from 'axios';
 
 //export default function Leaderboard(props) {
   class Leaderboard extends Component{
@@ -15,6 +15,7 @@ import Tabletop from 'tabletop';
     };
     
     componentDidMount() {
+      /*
       //ff_results
       Tabletop.init({
         key: '1pwA-gS0FNiB4acXmOknDZvvC-dcflUVLzi31Wu1MSbA',
@@ -25,6 +26,14 @@ import Tabletop from 'tabletop';
              () => {           
         })
       });
+      */
+
+      axios.get(`http://localhost:3000/lb`)
+      .then(res => {
+        this.setState({results:res.data})
+      });
+
+
 }
 
   render(){

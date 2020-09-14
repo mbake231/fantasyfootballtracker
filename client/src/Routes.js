@@ -4,7 +4,6 @@ import Results from './components/Results';
 
 
 export default function Routes(props) {
-  console.log(props);
   return (
     <Switch>
       <Route

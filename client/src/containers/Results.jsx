@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Table from 'react-bootstrap/Table';
 import {Form} from 'react-bootstrap';
 import Tabletop from 'tabletop';
+import axios from 'axios';
 
 class Results extends Component{
   constructor() {
@@ -15,7 +16,6 @@ class Results extends Component{
 
 handleChange(e) {
  
-   console.log(e.target.value);
      this.setState({week:e.target.value});
  
 
@@ -23,7 +23,6 @@ handleChange(e) {
 
 pickColor(num) {
   var numInt = parseInt(num);
-  console.log(numInt);
   if (numInt==1)
       return 'lightGreen';
   else if (numInt<7)
@@ -34,7 +33,7 @@ pickColor(num) {
 }
 
 componentDidMount() {
-          //ff_results
+          /*
           Tabletop.init({
             key: '1943oBmmjDj6krlZx2Ff7MxgxG-oHoVEqY4VRqFkRaBQ',
             simpleSheet: true})
@@ -43,6 +42,11 @@ componentDidMount() {
               this.setState({results:res},
                  () => {           
             })
+          });
+          */
+          axios.get(`http://localhost:3000/res`)
+          .then(res => {
+            this.setState({results:res.data})
           });
 }
 

@@ -5,7 +5,6 @@ import './base.css';
 import {Navbar, Nav, NavDropdown}  from 'react-bootstrap';
 import Leaderboard from './containers/Leaderboard';
 import Results from './containers/Results';
-import Schedules from './containers/Schedules';
 import WeeklyLeaderboard from './containers/WeeklyLeaderboard';
 import { Route,Switch,Link } from "react-router-dom";
 import ReactPullToRefresh from 'react-pull-to-refresh';
@@ -59,7 +58,6 @@ render() {
 <Route path="/results" exact render={(props) => <Results results={this.state.results}  {...props}  />} />
 
             <Route path="/results" exact component={Results} />
-            <Route path="/schedules" exact component={Schedules} />
             <Route path="/weeklytable" exact component={WeeklyLeaderboard} />
 
         </Switch>
