@@ -12,7 +12,7 @@ import Badge from 'react-bootstrap/Badge'
           week:"1",
           results: null,
           winner: 'Savvy b',
-          highScore: 124
+          highScore: 128.76
       }
     };
     
