@@ -3,14 +3,15 @@ import Table from 'react-bootstrap/Table';
 import {Form} from 'react-bootstrap';
 import Tabletop from 'tabletop';
 import axios from 'axios';
+import w1 from './weekly_json/w1.json';
 
 class WeeklyLeaderboard extends Component{
   constructor() {
   super();
   this.state = {
-      week:"1",
+      week:2,
       results: [0,1],
-      topsix: []
+      currentWeek:2
   }
 };
 
@@ -56,7 +57,6 @@ componentDidMount() {
           axios.get(url)
           .then(res => {
             this.setState({results:res.data})
-            console.log(res.data)
           });
 }
 
@@ -73,8 +73,28 @@ getRankEnding (rank) {
 
 }
 
+handleChange(e) {
+ 
+  
+  this.setState({week:e.target.value});
+  if(parseInt(e.target.value)==parseInt(this.state.currentWeek)){
+    var url;
+    if(process.env.NODE_ENV === 'production')
+      url='https://www.leagueofhunks.com/wlb';
+    else
+      url='http://localhost:3000/wlb';
 
+     axios.get(url)
+     .then(res => {
+       this.setState({results:res.data})
+     });
+  }
+  else {
+    if(e.target.value==1)
+      this.setState({results:w1});
+  }
 
+}
  
  render(){
 
@@ -82,8 +102,12 @@ getRankEnding (rank) {
     <div><br></br>
       <div id="dropdown" style={{textAlign:'left'}}>
         <Form.Group controlId="exampleForm.ControlSelect1">
-        <Form.Label style={{display:'inline'}}>Week 1  </Form.Label>
-        
+        <Form.Label style={{display:'inline'}}>Week    </Form.Label>
+        <Form.Control style={{display:'inline',width:'20%'}} value={this.state.week} as="select" onChange={this.handleChange.bind(this)}>
+          <option value ="1" onChange={e => {this.handleChange.bind(this)}}>1</option>
+          <option value ="2" onChange={e => {this.handleChange.bind(this)}}>2</option>
+
+        </Form.Control>
       </Form.Group>
       </div>
     <Table striped bordered hover size="sm" >

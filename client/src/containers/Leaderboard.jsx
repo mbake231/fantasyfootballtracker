@@ -9,7 +9,7 @@ import Badge from 'react-bootstrap/Badge'
     constructor() {
       super();
       this.state = {
-          week:"1",
+          week:"2",
           results: null,
           winner: 'Savvy b',
           highScore: 128.76

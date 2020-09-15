@@ -8,7 +8,7 @@ class Results extends Component{
   constructor() {
   super();
   this.state = {
-      week:"1",
+      week:"2",
       results: [0,1],
       topsix: []
   }
@@ -65,7 +65,7 @@ componentDidMount() {
       <div id="dropdown" style={{textAlign:'left'}}>
         <Form.Group controlId="exampleForm.ControlSelect1">
         <Form.Label style={{display:'inline'}}>Week    </Form.Label>
-        <Form.Control style={{display:'inline',width:'20%'}} as="select" onChange={this.handleChange.bind(this)}>
+        <Form.Control style={{display:'inline',width:'20%'}} value={this.state.week} as="select" onChange={this.handleChange.bind(this)}>
           <option value ="1" onChange={e => {this.updateWeek()}}>1</option>
           <option value ="2" onChange={e => {this.updateWeek()}}>2</option>
           <option value ="3" onChange={e => {this.updateWeek()}}>3</option>
