@@ -61,6 +61,15 @@ import Badge from 'react-bootstrap/Badge'
 
   }
 
+  checkMedal (name) {
+      if(name=='Savvy b')
+          return <div style={{display:'inline'}}>
+              <img src='./troph.png' width='30px'></img><Badge variant='warning'>124</Badge>
+              
+          </div>
+
+  }
+
     calculatePrizes () {
 
       
@@ -93,7 +102,7 @@ import Badge from 'react-bootstrap/Badge'
         <tbody>
         <tr>
           <td>{this.state.results[i].rank}</td>
-          <td>{this.state.results[i].team_name}</td>
+          <td>{this.state.results[i].team_name}{this.checkMedal(this.state.results[i].team_name)}</td>
           <td>{this.state.results[i].name}</td>
           <td>{this.state.results[i].total_pts}</td>
           <td>{this.state.results[i].prize}</td>
@@ -107,11 +116,15 @@ import Badge from 'react-bootstrap/Badge'
 
 
     <div style={{textAlign:'left'}}>
+    <div style={{display:'inline'}}>
+              <img src='./troph.png' width='30px'></img><Badge variant='warning'>Season Long Highest One Week Score ($450)</Badge>
+              
+          </div>
       <h3>
       Scoring Rules for Drew
       </h3>
       <h5>
-        <ul>Win Weekly Matchup: <Badge variant="warning">+2 Points</Badge></ul>
+        <ul>Win Weekly Matchup: <Badge variant="info">+2 Points</Badge></ul>
         <ul>Highest Weekly Score: <Badge variant="success">+1 Point</Badge></ul>
         <ul>Place 2nd - 6th in a Week: <Badge variant="primary">+1 Point</Badge></ul>
       </h5>
