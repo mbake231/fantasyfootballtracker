@@ -11,7 +11,8 @@ import Badge from 'react-bootstrap/Badge'
       this.state = {
           week:"1",
           results: null,
-          topsix: []
+          winner: 'Savvy b',
+          highScore: 124
       }
     };
     
@@ -50,6 +51,8 @@ import Badge from 'react-bootstrap/Badge'
       }
     }
 
+
+
     howManyWithRank(rank) {
 
       var ctr=0;
@@ -62,17 +65,32 @@ import Badge from 'react-bootstrap/Badge'
   }
 
   checkMedal (name) {
-      if(name=='Savvy b')
+      var winner = this.state.winner;
+
+      if(name==winner)
           return <div style={{display:'inline'}}>
-              <img src='./troph.png' width='30px'></img><Badge variant='warning'>124</Badge>
+              <img src='./troph.png' width='30px'></img><Badge variant='warning'>{this.state.highScore}</Badge>
               
           </div>
 
   }
 
-    calculatePrizes () {
+    calculatePrize (rank,name) {
 
-      
+      var winner = this.state.winner;
+        var prizes = [1950,700,500,200,100,40,0,0,0,0,0,0];
+        var intRank = parseInt(rank);
+        var myprize=0;
+
+        for (var i=0; i<this.howManyWithRank(intRank);i++) {
+            myprize += prizes[intRank-1+i]
+        }
+
+        if (name==winner)
+          myprize += 450;
+
+        return '$'+Math.floor(myprize/this.howManyWithRank(intRank));
+
         
       
 
@@ -105,7 +123,7 @@ import Badge from 'react-bootstrap/Badge'
           <td>{this.state.results[i].team_name}{this.checkMedal(this.state.results[i].team_name)}</td>
           <td>{this.state.results[i].name}</td>
           <td>{this.state.results[i].total_pts}</td>
-          <td>{this.state.results[i].prize}</td>
+          <td>{this.calculatePrize(this.state.results[i].rank,this.state.results[i].team_name)}</td>
         </tr>
       </tbody>
         )) : <div></div>}
@@ -120,6 +138,7 @@ import Badge from 'react-bootstrap/Badge'
               <img src='./troph.png' width='30px'></img><Badge variant='warning'>Season Long Highest One Week Score ($450)</Badge>
               
           </div>
+      <br></br><br></br>
       <h3>
       Scoring Rules for Drew
       </h3>
