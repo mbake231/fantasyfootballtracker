@@ -42,12 +42,11 @@ setInterval(function(){
 
 var now =  new Date();
 
-if (now.getDay()==0 || now.getDay()==1 || now.getDay()==4) {
+//if (now.getDay()==0 || now.getDay()==1 || now.getDay()==4 || ow.getDay()==2) {
     console.log('Day check: '+days[now.getDay()] + " is an NFL gameday!");
   refreshLeagueData();
-}
-else 
-  console.log(days[now.getDay()] + " is not a game day!");
+
+
 
 },10000)
 
