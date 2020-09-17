@@ -56,7 +56,10 @@ componentDidMount() {
 
           axios.get(url)
           .then(res => {
-            this.setState({results:res.data})
+            this.setState({results:res.data},
+              () => {    
+                  this.adjustRankForTies();       
+              })
           });
 }
 
@@ -71,6 +74,25 @@ getRankEnding (rank) {
     return 'rd';
   return 'th';
 
+}
+
+adjustRankForTies() {
+  if(this.state.results != null) {
+    var adjResults = this.state.results;
+    adjResults[0].rank = 1;
+    for (var i=1;i<12;i++) {
+      if(adjResults[i].fantasy_pts == adjResults[i-1].fantasy_pts) {
+        
+        adjResults[i].rank = adjResults[i-1].rank;
+      }
+      else
+        adjResults[i].rank = i+1;
+    }
+    this.setState({results:adjResults},
+      () => {    
+          
+      });
+  }
 }
 
 handleChange(e) {
@@ -125,7 +147,7 @@ handleChange(e) {
     return (
       <tbody>
       <tr>
-        <td>     {i+1}</td>
+        <td>     {this.state.results[i].rank}</td>
         <td>{this.state.results[i].team_name}</td>
         <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}} >{this.state.results[i].fantasy_pts} &#40;+{this.state.results[i].total_pts}&#41;</td>
         <td style={{backgroundColor: this.pickColor(this.state.results[i].proj_rank)}} ><i>{this.state.results[i].proj_fantasy_pts} &#40;{this.state.results[i].proj_rank}{this.getRankEnding(this.state.results[i].proj_rank)}&#41;</i></td>
