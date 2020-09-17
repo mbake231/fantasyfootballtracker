@@ -9,7 +9,7 @@ import Badge from 'react-bootstrap/Badge'
     constructor() {
       super();
       this.state = {
-          week:"2",
+          week:"1",
           results: null,
           winner: 'Savvy b',
           highScore: 128.76
@@ -78,7 +78,7 @@ import Badge from 'react-bootstrap/Badge'
     calculatePrize (rank,name) {
 
       var winner = this.state.winner;
-        var prizes = [1950,700,500,200,100,40,0,0,0,0,0,0];
+        var prizes = [1950,780,500,200,100,40,0,0,0,0,-40,-80];
         var intRank = parseInt(rank);
         var myprize=0;
 
