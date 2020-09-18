@@ -14,6 +14,16 @@ const port = process.env.PORT || 3000 // Heroku will need the PORT environment v
 app.use(cors());
 app.use(express.static('client/build'));
 
+app.use (function (req, res, next) {
+  if (req.secure) {
+          // request was via http, so do no special handling
+          res.redirect('http://' + req.headers.host + req.url);
+  } else {
+          // request was via http, so do no special handling
+          next();
+  }
+});
+
 // start express server on port 5000
 app.listen(port, () => console.log(`App is live on port ${port}!`))
 
