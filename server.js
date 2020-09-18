@@ -77,7 +77,7 @@ function refreshLeagueData () {
 
 
       Tabletop.init({
-        key: '1943oBmmjDj6krlZx2Ff7MxgxG-oHoVEqY4VRqFkRaBQ',
+        key: '1nEAaQhEhkZpox7RMyTD6GH1lHboE5q_Z-jT_YfdE72c',
         simpleSheet: true})
         .then((data,tabletop) => data)
         .then(res => {
