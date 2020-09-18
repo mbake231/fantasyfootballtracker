@@ -58,7 +58,7 @@ var now =  new Date();
 
 
 
-},10000)
+},20000)
 
 
 function refreshLeagueData () {
