@@ -86,10 +86,14 @@ import Badge from 'react-bootstrap/Badge'
             myprize += prizes[intRank-1+i]
         }
 
+        console.log(myprize+' '+name+' '+winner);
+
+        myprize = Math.floor(myprize/this.howManyWithRank(intRank));
+
         if (name==winner)
           myprize += 450;
 
-        return '$'+Math.floor(myprize/this.howManyWithRank(intRank));
+        return '$'+myprize;
 
         
       
