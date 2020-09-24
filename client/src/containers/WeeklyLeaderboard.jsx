@@ -4,7 +4,7 @@ import {Form} from 'react-bootstrap';
 import Tabletop from 'tabletop';
 import axios from 'axios';
 import w1 from './weekly_json/w1.json';
-import w2 from './weekly_json/w1.json';
+import w2 from './weekly_json/w2.json';
 
 class WeeklyLeaderboard extends Component{
   constructor() {
