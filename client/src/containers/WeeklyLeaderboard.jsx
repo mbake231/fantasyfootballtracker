@@ -10,7 +10,7 @@ class WeeklyLeaderboard extends Component{
   constructor() {
   super();
   this.state = {
-      week:2,
+      week:3,
       results: [0,1],
       currentWeek:3
   }
