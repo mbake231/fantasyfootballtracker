@@ -4,6 +4,7 @@ import {Form} from 'react-bootstrap';
 import Tabletop from 'tabletop';
 import axios from 'axios';
 import w1 from './weekly_json/w1.json';
+import w2 from './weekly_json/w1.json';
 
 class WeeklyLeaderboard extends Component{
   constructor() {
@@ -11,7 +12,7 @@ class WeeklyLeaderboard extends Component{
   this.state = {
       week:2,
       results: [0,1],
-      currentWeek:2
+      currentWeek:3
   }
 };
 
@@ -114,6 +115,8 @@ handleChange(e) {
   else {
     if(e.target.value==1)
       this.setState({results:w1});
+    else if(e.target.value==2)
+      this.setState({results:w2});
   }
 
 }
@@ -128,6 +131,7 @@ handleChange(e) {
         <Form.Control style={{display:'inline',width:'20%'}} value={this.state.week} as="select" onChange={this.handleChange.bind(this)}>
           <option value ="1" onChange={e => {this.handleChange.bind(this)}}>1</option>
           <option value ="2" onChange={e => {this.handleChange.bind(this)}}>2</option>
+          <option value ="3" onChange={e => {this.handleChange.bind(this)}}>3</option>
 
         </Form.Control>
       </Form.Group>
