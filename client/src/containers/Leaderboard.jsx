@@ -78,7 +78,8 @@ import Badge from 'react-bootstrap/Badge'
     calculatePrize (rank,name) {
 
       var winner = this.state.winner;
-        var prizes = [1950,780,500,200,100,40,0,0,0,0,-40,-80];
+        //var prizes = [1950,780,500,200,100,40,0,0,0,0,-40,-80];
+        var prizes = [2000,1000,500,0,0,0,0,0,0,0,-25,-75];
         var intRank = parseInt(rank);
         var myprize=0;
 
@@ -91,7 +92,7 @@ import Badge from 'react-bootstrap/Badge'
         myprize = Math.floor(myprize/this.howManyWithRank(intRank));
 
         if (name==winner)
-          myprize += 450;
+          myprize += 500;
 
         return '$'+myprize;
 
@@ -139,7 +140,7 @@ import Badge from 'react-bootstrap/Badge'
 
     <div style={{textAlign:'left'}}>
     <div style={{display:'inline'}}>
-              <img src='./troph.png' width='30px'></img><Badge variant='warning'>Season Long Highest One Week Score ($450)</Badge>
+              <img src='./troph.png' width='30px'></img><Badge variant='warning'>Season Long Highest One Week Score ($500)</Badge>
               
           </div>
       <br></br><br></br>
