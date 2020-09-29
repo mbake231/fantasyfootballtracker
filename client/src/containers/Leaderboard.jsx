@@ -11,8 +11,8 @@ import Badge from 'react-bootstrap/Badge'
       this.state = {
           week:"1",
           results: null,
-          winner: 'Demons of Sex',
-          highScore: 134.3
+          winner: "Gor's Navy",
+          highScore: 157.4
       }
     };
     
