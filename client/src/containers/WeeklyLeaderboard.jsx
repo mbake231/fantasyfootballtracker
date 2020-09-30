@@ -5,14 +5,16 @@ import Tabletop from 'tabletop';
 import axios from 'axios';
 import w1 from './weekly_json/w1.json';
 import w2 from './weekly_json/w2.json';
+import w3 from './weekly_json/w3.json';
+
 
 class WeeklyLeaderboard extends Component{
   constructor() {
   super();
   this.state = {
-      week:3,
+      week:4,
       results: [0,1],
-      currentWeek:3
+      currentWeek:4
   }
 };
 
@@ -117,6 +119,8 @@ handleChange(e) {
       this.setState({results:w1});
     else if(e.target.value==2)
       this.setState({results:w2});
+    else if(e.target.value==3)
+      this.setState({results:w3});
   }
 
 }
@@ -132,6 +136,8 @@ handleChange(e) {
           <option value ="1" onChange={e => {this.handleChange.bind(this)}}>1</option>
           <option value ="2" onChange={e => {this.handleChange.bind(this)}}>2</option>
           <option value ="3" onChange={e => {this.handleChange.bind(this)}}>3</option>
+          <option value ="4" onChange={e => {this.handleChange.bind(this)}}>4</option>
+
 
         </Form.Control>
       </Form.Group>
