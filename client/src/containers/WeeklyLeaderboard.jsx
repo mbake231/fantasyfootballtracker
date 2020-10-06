@@ -12,9 +12,9 @@ class WeeklyLeaderboard extends Component{
   constructor() {
   super();
   this.state = {
-      week:4,
+      week:5,
       results: [0,1],
-      currentWeek:4
+      currentWeek:5
   }
 };
 
@@ -137,6 +137,8 @@ handleChange(e) {
           <option value ="2" onChange={e => {this.handleChange.bind(this)}}>2</option>
           <option value ="3" onChange={e => {this.handleChange.bind(this)}}>3</option>
           <option value ="4" onChange={e => {this.handleChange.bind(this)}}>4</option>
+          <option value ="5" onChange={e => {this.handleChange.bind(this)}}>5</option>
+
 
 
         </Form.Control>
