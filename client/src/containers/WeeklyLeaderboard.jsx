@@ -6,6 +6,8 @@ import axios from 'axios';
 import w1 from './weekly_json/w1.json';
 import w2 from './weekly_json/w2.json';
 import w3 from './weekly_json/w3.json';
+import w4 from './weekly_json/w4.json';
+
 
 
 class WeeklyLeaderboard extends Component{
@@ -121,6 +123,8 @@ handleChange(e) {
       this.setState({results:w2});
     else if(e.target.value==3)
       this.setState({results:w3});
+   else if(e.target.value==4)
+      this.setState({results:w4});
   }
 
 }
