@@ -7,6 +7,8 @@ import w1 from './weekly_json/w1.json';
 import w2 from './weekly_json/w2.json';
 import w3 from './weekly_json/w3.json';
 import w4 from './weekly_json/w4.json';
+import w5 from './weekly_json/w5.json';
+
 
 
 
@@ -14,9 +16,9 @@ class WeeklyLeaderboard extends Component{
   constructor() {
   super();
   this.state = {
-      week:5,
+      week:6,
       results: [0,1],
-      currentWeek:5
+      currentWeek:6
   }
 };
 
@@ -125,6 +127,9 @@ handleChange(e) {
       this.setState({results:w3});
    else if(e.target.value==4)
       this.setState({results:w4});
+    else if(e.target.value==5)
+      this.setState({results:w5});
+  
   }
 
 }
@@ -142,6 +147,7 @@ handleChange(e) {
           <option value ="3" onChange={e => {this.handleChange.bind(this)}}>3</option>
           <option value ="4" onChange={e => {this.handleChange.bind(this)}}>4</option>
           <option value ="5" onChange={e => {this.handleChange.bind(this)}}>5</option>
+          <option value ="6" onChange={e => {this.handleChange.bind(this)}}>6</option>
 
 
 

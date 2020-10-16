@@ -1,0 +1,121 @@
+[{
+    "id": "1",
+    "team_name": "Gor's Navy",
+    "name": "Mike",
+    "fantasy_pts": "126.9",
+    "total_pts": "4",
+    "rank": "1",
+    "proj_fantasy_pts": "126.9",
+    "proj_rank": "1",
+    "division": "a"
+}, {
+    "id": "5",
+    "team_name": "Fantasy Football",
+    "name": "Drew Simon",
+    "fantasy_pts": "109.78",
+    "total_pts": "3",
+    "rank": "2",
+    "proj_fantasy_pts": "109.8",
+    "proj_rank": "2",
+    "division": "b"
+}, {
+    "id": "11",
+    "team_name": "PRETTY RICKY",
+    "name": "Eric Kruvant",
+    "fantasy_pts": "105.64",
+    "total_pts": "3",
+    "rank": "3",
+    "proj_fantasy_pts": "105.6",
+    "proj_rank": "3",
+    "division": "c"
+}, {
+    "id": "3",
+    "team_name": "Player Safety",
+    "name": "Michael Lisa",
+    "fantasy_pts": "91.94",
+    "total_pts": "1",
+    "rank": "4",
+    "proj_fantasy_pts": "91.9",
+    "proj_rank": "4",
+    "division": "a"
+}, {
+    "id": "8",
+    "team_name": "Demons of Sex",
+    "name": "John Grymes, Matthew Redmond",
+    "fantasy_pts": "80.14",
+    "total_pts": "3",
+    "rank": "5",
+    "proj_fantasy_pts": "80.1",
+    "proj_rank": "5",
+    "division": "b"
+}, {
+    "id": "4",
+    "team_name": "Harry! G!",
+    "name": "Harrison Grymes",
+    "fantasy_pts": "79.22",
+    "total_pts": "1",
+    "rank": "6",
+    "proj_fantasy_pts": "79.2",
+    "proj_rank": "6",
+    "division": "a"
+}, {
+    "id": "12",
+    "team_name": "The Kitties",
+    "name": "Matt Kruvant",
+    "fantasy_pts": "79.08",
+    "total_pts": "0",
+    "rank": "7",
+    "proj_fantasy_pts": "79.1",
+    "proj_rank": "7",
+    "division": "c"
+}, {
+    "id": "7",
+    "team_name": "The Cigarettes",
+    "name": "Henry Dillon, Phips Smith",
+    "fantasy_pts": "73.9",
+    "total_pts": "2",
+    "rank": "8",
+    "proj_fantasy_pts": "73.9",
+    "proj_rank": "8",
+    "division": "b"
+}, {
+    "id": "9",
+    "team_name": "Savvy b",
+    "name": "Kevin Kelly",
+    "fantasy_pts": "68.56",
+    "total_pts": "2",
+    "rank": "9",
+    "proj_fantasy_pts": "68.6",
+    "proj_rank": "9",
+    "division": "c"
+}, {
+    "id": "10",
+    "team_name": "Daddy Vapes",
+    "name": "Dickie Redmond",
+    "fantasy_pts": "65.36",
+    "total_pts": "0",
+    "rank": "10",
+    "proj_fantasy_pts": "65.4",
+    "proj_rank": "10",
+    "division": "c"
+}, {
+    "id": "2",
+    "team_name": "NJ Tickle monsters",
+    "name": "Michael O.C.",
+    "fantasy_pts": "63.6",
+    "total_pts": "0",
+    "rank": "11",
+    "proj_fantasy_pts": "63.6",
+    "proj_rank": "11",
+    "division": "a"
+}, {
+    "id": "6",
+    "team_name": "CouplesTherapy",
+    "name": "Rachel Lesaar, Scott Gunther",
+    "fantasy_pts": "58.92",
+    "total_pts": "0",
+    "rank": "12",
+    "proj_fantasy_pts": "58.9",
+    "proj_rank": "12",
+    "division": "b"
+}]
