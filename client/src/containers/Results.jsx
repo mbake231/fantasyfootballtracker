@@ -8,7 +8,7 @@ class Results extends Component{
   constructor() {
   super();
   this.state = {
-      week:"8",
+      week:"9",
       results: [0,1],
       topsix: []
   }
@@ -74,6 +74,7 @@ componentDidMount() {
           <option value ="6" onChange={e => {this.updateWeek()}}>6</option>
           <option value ="7" onChange={e => {this.updateWeek()}}>7</option>
           <option value ="8" onChange={e => {this.updateWeek()}}>8</option>
+          <option value ="9" onChange={e => {this.updateWeek()}}>9</option>
 
 
 
