@@ -12,7 +12,7 @@ import Badge from 'react-bootstrap/Badge'
           week:"1",
           results: null,
           winner: "Gor's Navy",
-          highScore: 157.4
+          highScore: 205.38
       }
     };
     
