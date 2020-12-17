@@ -16,7 +16,7 @@ import w10 from './weekly_json/w10.json';
 import w11 from './weekly_json/w11.json';
 import w12 from './weekly_json/w12.json';
 import w13 from './weekly_json/w13.json';
-
+import w14 from './weekly_json/w14.json';
 
 
 
@@ -25,9 +25,9 @@ class WeeklyLeaderboard extends Component{
   constructor() {
   super();
   this.state = {
-      week:14,
+      week:15,
       results: [0,1],
-      currentWeek:14
+      currentWeek:15
   }
 };
 
@@ -154,6 +154,8 @@ handleChange(e) {
       this.setState({results:w12});
       else if(e.target.value==13)
       this.setState({results:w13});
+      else if(e.target.value==14)
+      this.setState({results:w14});
   }
 
 }
@@ -180,6 +182,7 @@ handleChange(e) {
           <option value ="12" onChange={e => {this.handleChange.bind(this)}}>12</option>
           <option value ="13" onChange={e => {this.handleChange.bind(this)}}>13</option>
           <option value ="14" onChange={e => {this.handleChange.bind(this)}}>14</option>
+          <option value ="15" onChange={e => {this.handleChange.bind(this)}}>15</option>
 
 
 
@@ -187,7 +190,7 @@ handleChange(e) {
         </Form.Control>
       </Form.Group>
       </div>
-    <Table striped bordered hover size="sm" >
+    <Table bgcolor="#c0c0c0" striped bordered hover size="sm" >
   <thead>
     <tr>
       <th>Rank</th>
@@ -202,7 +205,7 @@ handleChange(e) {
     return (
       <tbody>
       <tr>
-        <td>     {this.state.results[i].rank}</td>
+        <td> {this.state.results[i].rank}</td>
         <td>{this.state.results[i].team_name}</td>
         <td style={{backgroundColor: this.pickColor(this.state.results[i].rank)}} >{this.state.results[i].fantasy_pts} &#40;+{this.state.results[i].total_pts}&#41;</td>
         <td style={{backgroundColor: this.pickColor(this.state.results[i].proj_rank)}} ><i>{this.state.results[i].proj_fantasy_pts} &#40;{this.state.results[i].proj_rank}{this.getRankEnding(this.state.results[i].proj_rank)}&#41;</i></td>

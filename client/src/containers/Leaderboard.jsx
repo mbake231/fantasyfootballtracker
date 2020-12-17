@@ -107,9 +107,9 @@ import Badge from 'react-bootstrap/Badge'
     return (
       <div> <br/>
       <h3 style={{textAlign:'left'}}>
-      The Table
+      The Table - Playoffs Week 1
       </h3>
-      <Table striped bordered hover size="sm">
+      <Table bgcolor="#c0c0c0" striped bordered hover size="sm">
     <thead>
       <tr>
         <th>Rank</th>
